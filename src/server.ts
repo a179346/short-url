@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import { ApiError } from './lib/ApiError';
 import { shortenRouter } from './routes/shortenRouter';
+import { idRedirectRouter } from './routes/idRedirectRouter';
 
 const app = express();
 export const server = http.createServer(app);
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use('/shorten', shortenRouter);
+app.use('/', idRedirectRouter);
 
 app.use((req, res, next) => {
   if (res.apiResponse)

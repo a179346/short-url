@@ -2,9 +2,14 @@ import shortid from 'shortid';
 
 import { Main } from '../Main';
 
+interface ShortenDocument {
+  shortId: string;
+  url: string;
+}
+
 export class ShortenDao {
   private get collection () {
-    return Main.MongoClient.db('short-url').collection('shorten');
+    return Main.MongoClient.db('short-url').collection<ShortenDocument>('shorten');
   }
 
   async insert (originalUrl: string) {

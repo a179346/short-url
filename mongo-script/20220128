@@ -1,0 +1,11 @@
+db.getCollection('shorten').createIndex({
+    "shortId": 1
+},{
+    unique: true
+});
+
+db.getCollection('shorten').createIndex({
+    "url": 1
+},{
+    unique: true
+});
