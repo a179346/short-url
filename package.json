@@ -1,0 +1,44 @@
+{
+  "name": "short-url",
+  "version": "1.0.0",
+  "description": "short url service in Typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --ignore src/test  src/index.ts",
+    "build": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a179346/short-url.git"
+  },
+  "keywords": [
+    "shorturl",
+    "typescript",
+    "mongodb"
+  ],
+  "author": "a179346",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a179346/short-url/issues"
+  },
+  "homepage": "https://github.com/a179346/short-url#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.1",
+    "validax": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.5.5"
+  }
+}
