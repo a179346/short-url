@@ -3,6 +3,7 @@ import http from 'http';
 import cors from 'cors';
 
 import { ApiError } from './lib/ApiError';
+import { shortenRouter } from './routes/shortenRouter';
 
 const app = express();
 export const server = http.createServer(app);
@@ -14,6 +15,8 @@ app.get('/ok', (req, res) => { res.send('ok'); });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use('/shorten', shortenRouter);
 
 app.use((req, res, next) => {
   if (res.apiResponse)
